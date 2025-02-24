@@ -2748,7 +2748,8 @@ GrArcAngle(GR_DRAW_ID id, GR_GC_ID gc, GR_COORD x, GR_COORD y,
 }
 #endif /* MW_FEATURE_SHAPES*/
 
-#if MW_FEATURE_IMAGES
+//#if MW_FEATURE_IMAGES
+#if 1
 /*
  * Draw a rectangular area in the specified drawable using the specified
  * graphics, as determined by the specified bit map.  This differs from
