@@ -927,7 +927,8 @@ GrAreaWrapper(void *r)
 static void
 GrBitmapWrapper(void *r)
 {
-#if MW_FEATURE_IMAGES
+  //#if MW_FEATURE_IMAGES
+#if 1
 	nxBitmapReq *req = r;
 
 	GrBitmap(req->drawid, req->gcid, req->x, req->y, req->width,

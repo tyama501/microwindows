@@ -530,7 +530,8 @@ GdFillRect(PSD psd, MWCOORD x1, MWCOORD y1, MWCOORD width, MWCOORD height)
 	GdFixCursor(psd);
 }
 
-#if MW_FEATURE_IMAGES
+//#if MW_FEATURE_IMAGES
+#if 1
 #if MW_FEATURE_PALETTE
 /**
  * Return true if color is in palette
@@ -848,7 +849,8 @@ GdDrawImageByPoint(PSD psd, MWCOORD x, MWCOORD y, PMWIMAGEHDR pimage)
 	}
 	extra = pimage->pitch - linesize;
 
-#if MW_FEATURE_IMAGES
+	//#if MW_FEATURE_IMAGES
+#if 1
 	/* Image format in RGB rather than BGR byte order?*/
 	rgborder = (pimage->data_format == MWIF_RGB888 || pimage->data_format == MWIF_RGBA8888);
 

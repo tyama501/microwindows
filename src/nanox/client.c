@@ -2991,7 +2991,8 @@ GrArcAngle(GR_DRAW_ID id, GR_GC_ID gc, GR_COORD x, GR_COORD y,
 }
 #endif
 
-#if MW_FEATURE_IMAGES
+//#if MW_FEATURE_IMAGES
+#if 1
 /**
  * Draws the monochrome bitmap data provided in the imagebits argument
  * at the specified position on the specified drawable using the specified
