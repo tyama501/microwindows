@@ -117,6 +117,11 @@ void waitKeyEvent(void)
         break;
       }
     }
+    else if (gr_eve.type == GR_EVENT_TYPE_CLOSE_REQ) {
+      fclose(fptxt);
+      GrClose();
+      exit(0);
+    }
   }
 }
 
@@ -250,7 +255,7 @@ int main(int argc, char **argv)
 
   GrGetScreenInfo(&si);
 
-  w1 = GrNewWindow(GR_ROOT_WINDOW_ID, 8, 8, si.cols - 16, si.rows - 24, 1, WHITE, LTBLUE);
+  w1 = GrNewWindowEx(GR_WM_PROPS_APPWINDOW, "nxjtxtv", GR_ROOT_WINDOW_ID, 8, 8, si.cols - 16, si.rows - 24, LTGRAY);
 
   if (dmode) {
     text_col = (si.cols - 16) / 16 - 2;
@@ -261,7 +266,7 @@ int main(int argc, char **argv)
     text_row = (si.rows - 24) / 8 - 4;
   }
 
-  GrSelectEvents(w1, GR_EVENT_MASK_KEY_DOWN);
+  GrSelectEvents(w1, GR_EVENT_MASK_KEY_DOWN | GR_EVENT_MASK_CLOSE_REQ);
 
   //GdHideCursor();
 
@@ -270,7 +275,7 @@ int main(int argc, char **argv)
   gc1 = GrNewGC();
 
   GrSetGCForeground(gc1, BLACK);
-  GrSetGCBackground(gc1, WHITE);
+  GrSetGCBackground(gc1, LTGRAY);
 
 
   while ((utf8_c = getc(fptxt)) != EOF) {
