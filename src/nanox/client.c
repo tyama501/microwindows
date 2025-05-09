@@ -2991,8 +2991,7 @@ GrArcAngle(GR_DRAW_ID id, GR_GC_ID gc, GR_COORD x, GR_COORD y,
 }
 #endif
 
-//#if MW_FEATURE_IMAGES
-#if 1
+#if MW_FEATURE_BITMAPS
 /**
  * Draws the monochrome bitmap data provided in the imagebits argument
  * at the specified position on the specified drawable using the specified
@@ -3047,7 +3046,9 @@ GrBitmap(GR_DRAW_ID id, GR_GC_ID gc, GR_COORD x, GR_COORD y, GR_SIZE width,
 	}
 	UNLOCK(&nxGlobalLock);
 }
+#endif
 
+#if MW_FEATURE_IMAGES
 /**
  * Draws the image contained in the specified image structure onto the
  * specified drawable at the specified coordinates using the specified
